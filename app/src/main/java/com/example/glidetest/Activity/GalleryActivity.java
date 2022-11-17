@@ -1,4 +1,4 @@
-package com.example.glidetest.gallery;
+package com.example.glidetest.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.glidetest.R;
+import com.example.glidetest.gallery.CustomGalleryAdapter;
+import com.example.glidetest.gallery.GalleryItemBean;
 import com.mengpeng.recyclerviewgallery.CarouselLayoutManager;
 import com.mengpeng.recyclerviewgallery.CarouselZoomPostLayoutListener;
 import com.mengpeng.recyclerviewgallery.CenterScrollListener;

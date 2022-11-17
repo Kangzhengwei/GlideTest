@@ -1,4 +1,4 @@
-package com.example.glidetest.X5WebView;
+package com.example.glidetest.Activity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +20,7 @@ import android.widget.SimpleAdapter;
 
 import com.example.glidetest.R;
 
-public class MainActivity extends Activity {
+public class X5MainActivity extends Activity {
 
 	public static boolean firstOpening = true;
 	private static String[] titles = null;
@@ -100,23 +100,23 @@ public class MainActivity extends Activity {
 					Intent intent = null;
 					switch (position) {
 					case FILE_CHOOSER: {
-						intent = new Intent(MainActivity.this,
+						intent = new Intent(X5MainActivity.this,
 								FilechooserActivity.class);
-						MainActivity.this.startActivity(intent);
+						X5MainActivity.this.startActivity(intent);
 
 					}
 						break;
 					case FULL_SCREEN_VIDEO: {
-						intent = new Intent(MainActivity.this,
+						intent = new Intent(X5MainActivity.this,
 								FullScreenActivity.class);
-						MainActivity.this.startActivity(intent);
+						X5MainActivity.this.startActivity(intent);
 					}
 						break;
 
 					case TBS_WEB: {
-						intent = new Intent(MainActivity.this,
+						intent = new Intent(X5MainActivity.this,
 								BrowserActivity.class);
-						MainActivity.this.startActivity(intent);
+						X5MainActivity.this.startActivity(intent);
 
 					}
 						break;

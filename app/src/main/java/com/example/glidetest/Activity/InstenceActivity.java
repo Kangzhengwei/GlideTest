@@ -1,4 +1,4 @@
-package com.example.glidetest;
+package com.example.glidetest.Activity;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.glidetest.R;
 import com.example.glidetest.adapter.InstanceAdapter;
 import com.example.glidetest.util.Utils;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;

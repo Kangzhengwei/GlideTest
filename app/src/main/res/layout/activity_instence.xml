@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".InstenceActivity">
+    tools:context=".Activity.InstenceActivity">
 
     <Button
         android:id="@+id/button"

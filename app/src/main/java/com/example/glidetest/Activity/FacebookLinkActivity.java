@@ -1,14 +1,22 @@
-package com.example.glidetest;
+package com.example.glidetest.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
 
+import com.example.glidetest.R;
 import com.lzx.starrysky.SongInfo;
 import com.lzx.starrysky.StarrySky;
 
@@ -22,6 +30,9 @@ public class FacebookLinkActivity extends AppCompatActivity {
     Button btn;
     private AudioManager audioManager;
 
+    private String uri = "fb://profile/103085035341194";
+    private String url = "https://www.facebook.com/VNovel-Webnovels-Fun-103085035341194";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,22 +40,61 @@ public class FacebookLinkActivity extends AppCompatActivity {
         // webView=findViewById(R.id.webview);
         btn = findViewById(R.id.btn);
         //webView.loadUrl("file:///android_asset/testLink.html");
-       /* btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                webView.loadUrl("http://zhushou.360.cn/detail/index/soft_id/77208");
-            }
-        });*/
+        btn.setOnClickListener(v -> intentToFaceBook(uri, url));
         String url = "https://asset.vnovel.us/chapter_mp3/b634d1c6fb3a6aaa56d2a4b5c08f01c0.mp3";
-        SongInfo info=new SongInfo();
+      /*  SongInfo info=new SongInfo();
         info.setSongId("123456");
         info.setSongUrl(url);
-        StarrySky.with().playMusicByInfo(info);
+        StarrySky.with().playMusicByInfo(info);*/
         //initMediaPlayer();
         //test();
     }
 
+    public boolean intentToFaceBook(String fbUrl, String webUrl) {
+        Intent intent = new Intent();
+        intent.setAction("android.intent.action.VIEW");
+        try {
+            if (!TextUtils.isEmpty(fbUrl)) {
+                if (isPackageExisted(this, "com.facebook.katana")) {
+                    intent.setData(Uri.parse(getFacebookPageURL(this, webUrl, fbUrl)));
+                } else {
+                    intent.setData(Uri.parse(webUrl));
+                }
+            } else {
+                intent.setData(Uri.parse(webUrl));
+            }
+            startActivityForResult(intent, 10);
+        } catch (Exception e) {
+            e.printStackTrace();
+            intent.setData(Uri.parse(webUrl));
+            startActivityForResult(intent, 10);
+        }
+        return true;
+    }
 
+    public static boolean isPackageExisted(Context c, String targetPackage) {
+        PackageManager pm = c.getPackageManager();
+        try {
+            PackageInfo info = pm.getPackageInfo(targetPackage, PackageManager.GET_META_DATA);
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
+        return true;
+    }
+
+    public static String getFacebookPageURL(Context context, String webUrl, String fbUrl) {
+        PackageManager packageManager = context.getPackageManager();
+        try {
+            int versionCode = packageManager.getPackageInfo("com.facebook.katana", 0).versionCode;
+            if (versionCode >= 3002850) { //newer versions of fb app
+                return "fb://facewebmodal/f?href=" + webUrl;
+            } else { //older versions of fb app
+                return fbUrl;
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            return webUrl; //normal web url
+        }
+    }
 
     private void initMediaPlayer() {
         audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
@@ -143,7 +193,7 @@ public class FacebookLinkActivity extends AppCompatActivity {
     }
 
 
-    private void test(){
+    private void test() {
         new Thread(() -> {
             try {
                 MediaPlayer mediaPlayer1 = new MediaPlayer();
@@ -159,7 +209,7 @@ public class FacebookLinkActivity extends AppCompatActivity {
                 mediaPlayer2.prepare();
                 mediaPlayer2.setLooping(true);
                 syncedCommand(mediaPlayer1, mediaPlayer2, MP_COMMAND.START);
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }).start();

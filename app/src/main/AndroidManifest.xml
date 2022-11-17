@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:name=".BaseApplication"
         android:allowBackup="true"
@@ -16,52 +17,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GlideTest">
-        <activity android:name=".HorizontalRVActivity">
-
-        </activity>
         <activity
-            android:name=".ScrollingActivity"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/Theme.GlideTest.NoActionBar">
-
-        </activity>
-        <activity android:name=".InstenceActivity">
-
-        </activity>
-        <activity android:name=".RecyclerViewActivity" />
-        <activity android:name=".FacebookLinkActivity" />
-
-        <uses-library
-            android:name="org.apache.http.legacy"
-            android:required="false" />
-
-        <activity android:name=".gallery.GalleryActivity" />
-        <activity android:name=".MainActivity" />
+            android:name=".Activity.VieoPlayActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".X5WebView.BrowserActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden" />
-        <activity
-            android:name=".X5WebView.FilechooserActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden" />
-        <activity
-            android:name=".X5WebView.FullScreenActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden" />
-        <activity
-            android:name=".X5WebView.MainActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden" >
+            android:name=".Activity.VideoTestActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Activity.GlideTestActivity" />
+        <activity android:name=".Activity.HorizontalRVActivity" />
+        <activity android:name=".Activity.ScrollingActivity" />
+        <activity android:name=".Activity.InstenceActivity" />
+        <activity android:name=".Activity.RecyclerViewActivity" />
+        <activity android:name=".Activity.FacebookLinkActivity" />
+        <activity android:name=".Activity.GalleryActivity" />
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <service
-            android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
-            android:label="dexopt"
-            android:process=":dexopt" >
-        </service>
-
+        <activity
+            android:name=".Activity.BrowserActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".Activity.FilechooserActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".Activity.FullScreenActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".Activity.X5MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity
             android:name="com.tencent.smtt.sdk.VideoActivity"
             android:alwaysRetainTaskState="true"
@@ -74,6 +63,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
+            android:label="dexopt"
+            android:process=":dexopt" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
     </application>
 
 </manifest>

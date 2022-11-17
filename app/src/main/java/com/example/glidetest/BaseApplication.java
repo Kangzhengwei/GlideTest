@@ -11,6 +11,7 @@ import com.tencent.smtt.sdk.QbSdk;
 
 import java.util.HashMap;
 
+
 public class BaseApplication extends Application {
     @Override
     public void onCreate() {
@@ -18,6 +19,7 @@ public class BaseApplication extends Application {
         MultiDex.install(this);
         StarrySky.init(this).apply();
         initX5WebView();
+       // PlayerFactory.setPlayManager(SystemPlayerManager.class);
     }
 
     private void initX5WebView(){

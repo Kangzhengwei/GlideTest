@@ -1,7 +1,8 @@
-package com.example.glidetest;
+package com.example.glidetest.Activity;
 
 import android.os.Bundle;
 
+import com.example.glidetest.R;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;

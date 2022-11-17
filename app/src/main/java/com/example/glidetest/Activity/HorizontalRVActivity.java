@@ -1,4 +1,4 @@
-package com.example.glidetest;
+package com.example.glidetest.Activity;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.example.glidetest.R;
 import com.example.glidetest.adapter.HorizontalAdapter;
 import com.example.glidetest.model.MultiHomeInfo;
 import com.example.glidetest.util.Utils;

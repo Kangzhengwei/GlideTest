@@ -1,4 +1,4 @@
-package com.example.glidetest.X5WebView;
+package com.example.glidetest.Activity;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -16,9 +16,7 @@ import android.os.Message;
 import android.os.Process;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.KeyEvent;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
@@ -35,8 +33,6 @@ import com.example.glidetest.R;
 import com.example.glidetest.widget.X5WebView;
 import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient.CustomViewCallback;
 import com.tencent.smtt.export.external.interfaces.JsResult;
-import com.tencent.smtt.export.external.interfaces.WebResourceRequest;
-import com.tencent.smtt.export.external.interfaces.WebResourceResponse;
 import com.tencent.smtt.sdk.CookieSyncManager;
 import com.tencent.smtt.sdk.DownloadListener;
 import com.tencent.smtt.sdk.ValueCallback;
@@ -297,7 +293,7 @@ public class BrowserActivity extends Activity {
 		} else {
 			mWebView.loadUrl(mIntentUrl.toString());
 		}*/
-		mWebView.loadUrl("http://www.dianyingim.com/");
+		mWebView.loadUrl("https://debugtbs.qq.com/");
 		TbsLog.d("time-cost", "cost time: "
 				+ (System.currentTimeMillis() - time));
 		CookieSyncManager.createInstance(this);

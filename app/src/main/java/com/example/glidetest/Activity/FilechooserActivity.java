@@ -1,4 +1,4 @@
-package com.example.glidetest.X5WebView;
+package com.example.glidetest.Activity;
 
 import android.app.Activity;
 import android.content.Intent;

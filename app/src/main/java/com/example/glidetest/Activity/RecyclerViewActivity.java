@@ -1,4 +1,4 @@
-package com.example.glidetest;
+package com.example.glidetest.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.glidetest.R;
 import com.example.glidetest.adapter.DemoAdapter;
 import com.example.glidetest.model.DataModeOne;
 import com.example.glidetest.model.DataModeThree;

@@ -5,12 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HorizontalRVActivity">
+    tools:context=".Activity.HorizontalRVActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
-        android:visibility="gone"
         android:layout_height="match_parent"
         android:orientation="horizontal" />
 
@@ -18,7 +17,6 @@
         android:id="@+id/animation_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
         app:lottie_rawRes="@raw/lf30_editor_srnoycvf" />
     <Button
         android:id="@+id/btn"
